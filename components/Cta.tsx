@@ -49,8 +49,9 @@ export default function ElectionCTA() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <h3 className="text-white text-2xl font-extrabold leading-tight">
-              C'est le jour des élections, allez voter!
+              C&apos;est le jour des élections, allez voter!
             </h3>
+
             <button className="bg-[#0c6baf] hover:bg-[#095d8d] text-white px-6 py-3 rounded-full inline-flex items-center gap-2 font-medium transition-colors shadow-md hover:shadow-xl">
               REJOIGNEZ LA CAMPAGNE
               <svg

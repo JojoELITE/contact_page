@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ContactBanner() {
     return (
       <div className="relative h-[400px] w-full overflow-hidden">
@@ -22,9 +24,9 @@ export default function ContactBanner() {
               <nav className="text-white/80 flex justify-center">
                 <ol className="flex items-center space-x-2">
                   <li>
-                    <a href="/" className="hover:text-white">
+                    <Link href="/" className="hover:text-white">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <span className="mx-2">/</span>
