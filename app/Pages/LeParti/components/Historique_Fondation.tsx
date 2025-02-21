@@ -52,7 +52,7 @@ function HistoriquePLC() {
   return (
     <div className="bg-[#f8f9fc] py-16 flex items-center justify-center">
       <div className="container mx-auto px-6 max-w-5xl">
-        <h1 className="text-4xl font-bold text-center text-[#2e75b7] mb-12">Histoire du PLC (Pour Le Changement)</h1>
+      <h1 className="text-5xl font-bold text-center text-blue-800 mb-16">Notre Histoire</h1>
 
         {/* Timeline */}
         <div className="relative">
