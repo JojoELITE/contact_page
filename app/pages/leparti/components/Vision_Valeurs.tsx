@@ -45,7 +45,7 @@ function VisionSection() {
               whileHover={{ scale: 1.05 }}
               className="relative overflow-hidden rounded-xl shadow-lg border border-gray-300 p-6 bg-white hover:shadow-xl transition-all"
             >
-              <h3 className="font-bold text-2xl mb-3 text-gray-900">
+              <h3 className="font-bold text-2xl mb-3 text-[#2e75b7]">
                 {item.title}
               </h3>
               <p className="text-gray-600 text-lg">{item.description}</p>
