@@ -185,7 +185,7 @@ export default function Adhesion() {
             <h3 className="text-lg font-bold">Termes et Conditions</h3>
             <p className="text-sm text-gray-600">
               En soumettant ce formulaire, vous acceptez notre politique de
-              confidentialité et nos conditions d'utilisation. Nous collectons
+              confidentialité et nos conditions d&apos;utilisation. Nous collectons
               vos informations pour améliorer nos services et pour vous tenir
               informé des activités de PLC.
             </p>

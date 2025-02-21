@@ -3,6 +3,7 @@
 import { Facebook, Twitter, Globe, Linkedin } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function LeadershipSection() {
   const leaders = [
@@ -133,9 +134,10 @@ export default function LeadershipSection() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <img
+                <Image
                   src={leader.image || "/placeholder.svg"}
                   alt={leader.name}
+                  fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </motion.div>
