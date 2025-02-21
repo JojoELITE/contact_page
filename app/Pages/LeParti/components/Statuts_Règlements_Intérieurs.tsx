@@ -1,92 +1,88 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
+import { useState } from "react"
+import { ChevronDown, ChevronUp } from "lucide-react"
 
 const statutsData = [
-  { 
-    year: "2024", 
-    title: "Principes Fondamentaux", 
-    content: "L'organisation repose sur les valeurs de solidarité, d'engagement et de développement durable. Elle vise à fédérer les citoyens autour d’un projet commun pour un avenir meilleur."
+  {
+    title: "Préambule",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
-  { 
-    year: "2023", 
-    title: "Devise et Signes Distinctifs", 
-    content: "Notre devise est « Unis pour un avenir meilleur ». Nos couleurs officielles sont le bleu et l'or. L’emblème est un cercle bleu entouré d’or, avec une étoile en son centre symbolisant l’espoir et l’unité."
+  {
+    title: "Article 1 : Nom et siège",
+    content:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
-  { 
-    year: "2022", 
-    title: "Objet de l’Organisation", 
-    content: "L'organisation a pour mission de promouvoir l’inclusion sociale, l’innovation et l’entrepreneuriat en mettant en place des programmes concrets pour améliorer le quotidien des citoyens."
+  {
+    title: "Article 2 : Objectifs",
+    content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   },
-  { 
-    year: "2021", 
-    title: "Caractère Républicain", 
-    content: "Nous adhérons aux principes fondamentaux définis par la Constitution et nous engageons à défendre la démocratie, l’unité nationale et les droits fondamentaux de tous les citoyens."
+  {
+    title: "Article 3 : Adhésion",
+    content:
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
-  { 
-    year: "2020", 
-    title: "Idéologie", 
-    content: "Nous adoptons une approche pragmatique, fondée sur l’intérêt collectif et le bien-être du peuple, au-delà des clivages idéologiques traditionnels. Nous travaillons avec toutes les entités partageant nos valeurs et respectant la légalité."
+  {
+    title: "Article 4 : Organes directeurs",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
-];
+  {
+    title: "Article 5 : Assemblée générale",
+    content:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+  {
+    title: "Article 6 : Modifications des statuts",
+    content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  },
+  {
+    title: "Article 7 : Dissolution",
+    content:
+      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  },
+]
+
+type StatutSectionProps = {
+  title: string;
+  content: string;
+}
 
 function StatutsReglements() {
   return (
-    <div className="bg-[#f8f9fc] py-16 flex items-center justify-center">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <h1 className="text-4xl font-bold text-center text-[#2e75b7] mb-12">Statuts et Règlements Intérieurs</h1>
-
-        {/* Timeline */}
-        <div className="relative">
-          {/* Ligne verticale */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-blue-300 h-full"></div>
-
-          {/* Éléments de la timeline */}
+    <div className="bg-gray-100 py-16">
+      <div className="container mx-auto px-4">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Statuts et règlements intérieurs</h1>
+        <div className="max-w-3xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
           {statutsData.map((statut, index) => (
-            <StatutSection key={index} {...statut} isLeft={index % 2 === 0} />
+            <StatutSection key={index} title={statut.title} content={statut.content} />
           ))}
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-interface StatutSectionProps {
-  year: string;
-  title: string;
-  content: string;
-  isLeft: boolean;
-}
+function StatutSection({ title, content }: StatutSectionProps) {
+  const [isOpen, setIsOpen] = useState(false)
 
-function StatutSection({ year, title, content, isLeft }: StatutSectionProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      viewport={{ once: true }}
-      className={`relative flex ${isLeft ? "justify-start" : "justify-end"} items-center w-full my-8`}
-    >
-      {/* Point sur la ligne */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#2e75b7] border-4 border-white rounded-full shadow-md"></div>
-
-      {/* Carte améliorée */}
-      <div
-        className={`relative w-[45%] bg-gradient-to-br from-white to-gray-100 shadow-lg rounded-xl p-6 border-t-4 border-[#2e75b7] transition-all duration-300 ease-in-out hover:shadow-2xl ${
-          isLeft ? "ml-auto" : "mr-auto"
-        }`}
+    <div className="border-b border-gray-200 last:border-b-0">
+      <button
+        className="flex justify-between items-center w-full px-6 py-4 text-left focus:outline-none"
+        onClick={() => setIsOpen(!isOpen)}
       >
-        {/* Année mise en valeur */}
-        <div className="absolute top-[-18px] left-5 bg-[#2e75b7] text-white px-3 py-1 rounded-lg text-sm font-bold shadow-md">
-          {year}
+        <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+        {isOpen ? <ChevronUp className="text-gray-500 w-5 h-5" /> : <ChevronDown className="text-gray-500 w-5 h-5" />}
+      </button>
+      {isOpen && (
+        <div className="px-6 py-4 bg-gray-50">
+          <p className="text-gray-600">{content}</p>
         </div>
-
-        {/* Contenu */}
-        <h2 className="text-xl font-bold text-gray-800 mt-3">{title}</h2>
-        <p className="text-gray-600 mt-2 leading-relaxed">{content}</p>
-      </div>
-    </motion.div>
-  );
+      )}
+    </div>
+  )
 }
 
-export default StatutsReglements;
+export default StatutsReglements
