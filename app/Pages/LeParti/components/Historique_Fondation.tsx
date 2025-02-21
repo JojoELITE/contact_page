@@ -35,7 +35,7 @@ function NotreHistoire() {
         {/* Image illustrative */}
         <div className="mt-24 flex flex-col items-center">
           <Image
-            src="/placeholder.svg"
+            src="/PLC .jpg"
             alt="Évolution du PLC à travers les années"
             width={1200}
             height={400}
